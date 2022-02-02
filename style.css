@@ -1,0 +1,35 @@
+html {
+    display: flex;
+    justify-content: center;
+    background: #e4fca4;
+}
+
+/* --------------------------------- Header --------------------------------- */
+
+
+.page-title {
+    margin-top: 40px;
+    min-width: 312px;
+    font-size: 56px;
+    font-weight: bold;
+    color: #75B79E;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: -0.004em;
+}
+
+
+/* --------------------------------- Main --------------------------------- */
+
+
+main {
+    margin-top: 47px;
+    background: aqua;
+}
+
+
+
+
+
+
+
+
