@@ -4,6 +4,12 @@ html {
     background: #e4fca4;
 }
 
+@media (max-width: 614px) {
+    .page-title {
+        text-align: center;
+    }
+}
+
 /* --------------------------------- Header --------------------------------- */
 
 
