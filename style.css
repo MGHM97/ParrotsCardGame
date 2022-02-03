@@ -1,7 +1,10 @@
-html {
+body {
+    background-color: #e4fca4;
+}
+
+header {
     display: flex;
     justify-content: center;
-    background: #e4fca4;
 }
 
 @media (max-width: 614px) {
@@ -21,17 +24,18 @@ html {
     color: #75B79E;
     font-family: "Roboto", sans-serif;
     letter-spacing: -0.004em;
+    background-color: rgb(255, 255, 255);
 }
 
 
 /* --------------------------------- Main --------------------------------- */
 
 
-main {
-    margin-top: 47px;
-    background: aqua;
+.cards-section {
+    margin-top: 100px;
+    height: 600px;
+    background: rgb(255, 94, 0);
 }
-
 
 
 
