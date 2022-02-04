@@ -1,5 +1,5 @@
 body {
-    background-color: #e4fca4;
+    background-color: #e8f8bc;
 }
 
 header {
@@ -24,7 +24,7 @@ header {
     color: #75B79E;
     font-family: "Roboto", sans-serif;
     letter-spacing: -0.004em;
-    background-color: rgb(255, 255, 255);
+    /* background-color: rgb(255, 255, 255); */
 }
 
 
@@ -34,9 +34,47 @@ header {
 .cards-section {
     margin-top: 100px;
     height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background: rgb(255, 94, 0);
 }
 
+
+/* --------------- Cards --------------- */
+
+.card {
+    width: 200px;
+    height: 250px;
+    position: relative;
+}
+
+.face {
+    width: 100%;
+    height: 100%;
+    background-color: #A7E9AF;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: all .5s;
+    transform-style: preserve-3d;
+}
+
+.back-face {
+    transform: rotateY(180deg);
+}
+
+.card:hover .back-face {
+    transform: rotateY(0deg);
+}
+
+.card:hover .front-face {
+    transform: rotateY(-180deg);
+}
 
 
 
