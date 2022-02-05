@@ -17,7 +17,7 @@ header {
 
 
 .page-title {
-    margin-top: 40px;
+    margin-top: 60px;
     min-width: 312px;
     font-size: 56px;
     font-weight: bold;
@@ -33,11 +33,14 @@ header {
 
 .cards-section {
     margin-top: 100px;
+    margin-left: 100px;
+    margin-right: 100px;
     height: 600px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    background: rgb(255, 94, 0);
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 15px;
 }
 
 
@@ -45,6 +48,7 @@ header {
 
 .card {
     width: 200px;
+    min-width: 200px;
     height: 250px;
     position: relative;
 }
@@ -68,11 +72,11 @@ header {
     transform: rotateY(180deg);
 }
 
-.card:hover .back-face {
+/* .card:hover  */.back-face {
     transform: rotateY(0deg);
 }
 
-.card:hover .front-face {
+/* .card:hover  */.front-face {
     transform: rotateY(-180deg);
 }
 

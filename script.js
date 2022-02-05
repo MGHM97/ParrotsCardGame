@@ -33,7 +33,9 @@ function insertCardsOnScreen (toBeInserted) {
     }
 }
 
+function seeCardFront () {
 
+}
 
 
 
