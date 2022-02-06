@@ -1,4 +1,6 @@
-let arrayLenght = null;
+const cardFront = ["bobrossparrot", "explodyparrot", "fiestaparrot", "metalparrot", "revertitparrot", "tripletsparrot", "unicornparrot"]; 
+
+let arrayLenght;
 
 function verifyPair (){
     let numCards = prompt("Insira o número de cartas que você deseja ter em seu jogo! (Obs: Insira um número *PAR* entre 4 e 14!)");
@@ -12,26 +14,41 @@ function verifyPair (){
 
 
 let toBeInserted = [];
+const imgs = [];
+let cards = [];
 
+function insertImagesOnCards (cardFront) {
+    for (let j = 0; j < arrayLenght/2; j++) {
+        imgs.push(cardFront[j], cardFront[j]);
+       /*  imgs.push(imgs[j]); */
+        /* console.log("test"); */
+    }
+}
+
+
+/*for (let j = 0; j < arrayLenght/2; j++) {
+    cards.push(imgs[j], imgs[j]);
+    /* console.log("test"); 
+}*/
 
 function insertCardsOnScreen (toBeInserted) {
-    for (i = 0; i < arrayLenght; i++) {
-        /* let inserted = toBeInserted[i]; */
+    for (let i = 0; i < arrayLenght; i++) {
         const modify = document.querySelector(".cards-section");
         modify.innerHTML += `
         
         <div class="card">
-            <div class="front-face face">
-                Frente
-            </div>
             <div class="back-face face">
-                Verso
+            <img src="./img/${imgs[i]}.gif" alt="card-front" height=100 whidth=100>
+            </div>
+            <div class="front-face face">
+                <img src="./img/front.png" alt="card-back" height=100 whidth=100>
              </div>
         </div>
 
-        `;
+        ` ;
     }
 }
+
 
 function seeCardFront () {
 
@@ -40,6 +57,6 @@ function seeCardFront () {
 
 
 
-
 verifyPair();
-insertCardsOnScreen();
+insertImagesOnCards(cardFront);
+insertCardsOnScreen(toBeInserted);
