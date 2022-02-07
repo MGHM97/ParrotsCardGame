@@ -98,22 +98,14 @@ function endGame () {
     if (arrayLenght/2 == pairNumber) {
         alert (`Fim de jogo. Você terminou em ${playCount} jogadas. Parabéns, manolo(a)!  :3`);
         let restartGame = prompt ("Deseja jogar mais uma vez? JONGA DE NOVO, PUFAVÔ! (づ｡◕‿‿◕｡)づ   Digite s para 'SIM' ou n para 'NÃO'.");
+        while ((restartGame !== 's') && (restartGame !== 'n')) {
+            alert ("Naaaaaaaaaum. Põe 's' de sim, ou 'n' de não. ಥ﹏ಥ");
+            restartGame = prompt ("Deseja jogar mais uma vez? JONGA DE NOVO, PUFAVÔ! (づ｡◕‿‿◕｡)づ   Digite s para 'SIM' ou n para 'NÃO'.");
+        }
         if (restartGame === 's') {
             window.location.reload();
         } else {
-            if (restartGame === 'n') {
-                alert ("Tá bom então. Obrigatô por jogar! Volte sempre!         (⊃｡•́‿•̀｡)⊃");
-            } else {
-                alert ("Naaaaaaaaaum. Põe 's' de sim, ou 'n' de não. ಥ﹏ಥ");
-                restartGame = prompt ("Deseja jogar mais uma vez? JONGA DE NOVO, PUFAVÔ! (づ｡◕‿‿◕｡)づ   Digite s para 'SIM' ou n para 'NÃO'.");
-                if (restartGame === 's') {
-                    window.location.reload();
-                } else {
-                    if (restartGame === 'n') {
-                        alert ("Tá bom então. Obrigatô por jogar! Volte sempre!         (⊃｡•́‿•̀｡)⊃");
-                    }
-                }
-            }
+            alert ("Tá bom então. Obrigatô por jogar! Volte sempre!         (⊃｡•́‿•̀｡)⊃");
         } 
     }
 }
