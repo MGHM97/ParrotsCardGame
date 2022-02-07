@@ -1,5 +1,10 @@
 const cardFront = ["bobrossparrot", "explodyparrot", "fiestaparrot", "metalparrot", "revertitparrot", "tripletsparrot", "unicornparrot"]; 
 
+let aux = null;
+let auxElement = null;
+let disable = false;
+let pairNumber = 0;
+
 let arrayLenght;
 
 function verifyPair (){
@@ -17,6 +22,7 @@ let toBeInserted = [];
 const imgs = [];
 let cards = [];
 
+
 function insertImagesOnCards (cardFront) {
     for (let j = 0; j < arrayLenght/2; j++) {
                 
@@ -25,13 +31,10 @@ function insertImagesOnCards (cardFront) {
         }
         
         imgs.sort(compare);
-        
+
         imgs.push(cardFront[j], cardFront[j]);
     }
 }
-
-
-
 
 
 function insertCardsOnScreen (toBeInserted, compare) {
@@ -40,11 +43,11 @@ function insertCardsOnScreen (toBeInserted, compare) {
         const modify = document.querySelector(".cards-section");
         modify.innerHTML += `
         
-        <div class="card">
-            <div class="back-face face">
-                <img src="./img/${imgs[i]}.gif" alt="card-front" height=100 whidth=100>
+        <div class="card" data-identifier="card" onclick='clickOnCard(this, ${i})'>
+            <div class="back-face face"  data-identifier="front-face">
+                <img src="./img/${imgs[i]}.gif" alt="card-face" height=100 whidth=100>
             </div>
-            <div class="front-face face">
+            <div class="front-face face" data-identifier="back-face">
                 <img src="./img/front.png" alt="card-back" height=100 whidth=100>
             </div>
         </div>
@@ -54,11 +57,55 @@ function insertCardsOnScreen (toBeInserted, compare) {
 }
 
 
-function seeCardFront () {
+function clickOnCard(element, index){  
+    if (disable === false) {
+        disable = true;
+        if (aux == null) {
+            aux = index;
+            auxElement = element;
+            cardFlip(element);
+            disable = false;
+        } else {
+            if (aux !== index) {
+                let lastImage = imgs[aux];
+                let currentImage = imgs[index];
+                cardFlip(element);
+                if (lastImage === currentImage) {
+                    endGame();
+                    disable = false;
+                    aux = null;
+                    auxElement = null;
+                } else {
+                    setTimeout(()=>{
+                        cardFlip(element);
+                        cardFlip(auxElement);
+                        aux = null;
+                        auxElement = null;
+                        disable = false;
+                    },2000);
+                }
+            } else {
+                disable = false;
+            }
+        }
+    }
+}
+
+function endGame () {
+    pairNumber++;
+    if (arrayLenght/2 == pairNumber) {
+        alert ("Fim de jogo! Parabéns, manolo!");
+    } 
 
 }
 
+function cardFlip (element) {
+    const front = element.querySelector('.front-face');
+    const back = element.querySelector('.back-face');
 
+    front.classList.toggle("front-flip");
+    back.classList.toggle("back-flip");
+}
 
 
 verifyPair();

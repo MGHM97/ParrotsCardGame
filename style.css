@@ -72,11 +72,11 @@ header {
     transform: rotateY(180deg);
 }
 
-.card:hover  .back-face {
+/* .card:hover   */.back-flip {
     transform: rotateY(0deg);
 }
 
-.card:hover  .front-face {
+/* .card:hover   */.front-flip {
     transform: rotateY(-180deg);
 }
 
