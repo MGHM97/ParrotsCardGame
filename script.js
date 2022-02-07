@@ -4,6 +4,7 @@ let aux = null;
 let auxElement = null;
 let disable = false;
 let pairNumber = 0;
+let playCount = 0;
 
 let arrayLenght;
 
@@ -60,6 +61,7 @@ function insertCardsOnScreen (toBeInserted, compare) {
 function clickOnCard(element, index){  
     if (disable === false) {
         disable = true;
+        playCount++;
         if (aux == null) {
             aux = index;
             auxElement = element;
@@ -82,7 +84,7 @@ function clickOnCard(element, index){
                         aux = null;
                         auxElement = null;
                         disable = false;
-                    },2000);
+                    },1000);
                 }
             } else {
                 disable = false;
@@ -94,7 +96,7 @@ function clickOnCard(element, index){
 function endGame () {
     pairNumber++;
     if (arrayLenght/2 == pairNumber) {
-        alert ("Fim de jogo! Parabéns, manolo!");
+        alert (`Fim de jogo. Você terminou em ${playCount} jogadas. Parabéns, manolo(a)!  :3`);
     } 
 
 }
